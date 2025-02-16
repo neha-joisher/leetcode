@@ -7,10 +7,8 @@
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         node=head
-        if node is None:
-            return False
         hashset=set()
-        while(node.next is not None):
+        while node:
             if node in hashset:
                 return True
             hashset.add(node)
