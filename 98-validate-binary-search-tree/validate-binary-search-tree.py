@@ -11,9 +11,7 @@ class Solution:
                 return True
             if not (left < root.val < right):
                 return False
-            return isValid(root.left, left, root.val) and isValid(
-                root.right, root.val, right
-            )
+            return isValid(root.left, left, root.val) and isValid(root.right, root.val, right)
 
         return isValid(root, float("-inf"), float("inf"))
         
