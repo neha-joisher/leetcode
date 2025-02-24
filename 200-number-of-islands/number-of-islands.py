@@ -10,11 +10,13 @@ class Solution:
                 return
             #condition to return count as 1 and mark as visited
             
-
             visited.add((r,c))
 
             #traverse in all four directions
-            dfs(r+1,c) or dfs(r-1,c) or dfs(r,c+1) or dfs(r,c-1)
+            dfs(r+1,c)  
+            dfs(r-1,c) 
+            dfs(r,c+1) 
+            dfs(r,c-1)
         
         
         for r in range(rows):
