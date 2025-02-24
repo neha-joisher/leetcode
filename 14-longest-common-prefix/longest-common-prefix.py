@@ -15,7 +15,7 @@ class PrefixTree:
                 current=current.children[c]
             current.endOfWord=True
         
-        def countOfLongestPrefix(self):
+        def findLongestPrefix(self):
             current=self.root
             str_prefix=""
             while True:
@@ -34,7 +34,7 @@ class Solution:
         for s in strs:
             p.insert(s)
         if len(p.root.children) >=2: return ""
-        else: return p.countOfLongestPrefix()
+        else: return p.findLongestPrefix()
             
 
 
