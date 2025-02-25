@@ -19,9 +19,7 @@ class Solution:
             return True
 
         for course,preq in prerequisites:
-            if course in hashmap:
                 hashmap[course].append(preq)
-            hashmap[course].append(preq)
 
         for course in range(numCourses):
             if not dfs(course): return False
