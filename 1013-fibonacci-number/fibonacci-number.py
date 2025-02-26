@@ -10,7 +10,7 @@ class Solution:
         # Time Complexity is O(2^n)
 
 
-        # 2. Top Down - Mmemoization
+        # 2. Top Down - Memoization
         # memo={0:0, 1:1}
         # def f(x):
         #     if x in memo:
@@ -37,6 +37,7 @@ class Solution:
         # return dp[n]
         # Time and Space Complexity is O(n)
 
+        # 4. Bottom up - constant memory space complexity O(1)
         if n==0:
             return 0
         if n==1:
