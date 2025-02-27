@@ -5,7 +5,6 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        #[2,7,11,15] 9 
         #value index
         hashmap={} 
         for i,n in enumerate(nums):
