@@ -1,5 +1,7 @@
 class Solution:
     def applyOperations(self, nums: List[int]) -> List[int]:
+        
+        #O(n) Time and O(1) space complexity
         for i in range(len(nums)-1):
             # if i!=len(nums)-1:
                 if nums[i]==nums[i+1]:
@@ -20,7 +22,7 @@ class Solution:
         
             
 
-
+        #O(n) Time and space complexity
         # res=[]
         # for i in range(len(nums)-1):
         #     if i!=len(nums)-1:
