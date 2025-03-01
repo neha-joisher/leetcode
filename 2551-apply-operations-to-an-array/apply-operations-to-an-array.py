@@ -14,17 +14,6 @@ class Solution:
         res.extend([0]*(count))
         return res
 
-        # i=0
-        # while(i<len(nums)-1):
-        #     if nums[i]==0:
-        #         temp=i
-        #         while(nums[i]==0):
-        #             i+=1
-        #         nums[temp]=nums[i]
-        #         nums[i]=0
-        #         i+=1
-        print()
-
 
 
         
