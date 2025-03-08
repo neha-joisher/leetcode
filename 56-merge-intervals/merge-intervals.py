@@ -1,5 +1,7 @@
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        if not intervals:
+            return []
         i = 0
         j = 1
         res = []
