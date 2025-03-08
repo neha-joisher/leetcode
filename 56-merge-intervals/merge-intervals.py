@@ -4,7 +4,7 @@ class Solution:
         j=1
         res=[]
         intervals.sort()
-        while i!=j and j <len(intervals):
+        while j <len(intervals):
             if intervals[i][1] < intervals[j][0]:
                 res.append(intervals[i])
             else:
@@ -13,4 +13,4 @@ class Solution:
             j+=1
         res.append(intervals[j-1])
         return res
-        
+#O(NLogN)
