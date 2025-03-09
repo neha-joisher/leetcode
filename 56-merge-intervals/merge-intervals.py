@@ -8,11 +8,10 @@ class Solution:
         
         for i in range(1, len(intervals)):
             prev = res[-1]  # Last interval in the result list
-            curr = intervals[i]  # Current interval
             
-            if prev[1] >= curr[0]:  # Overlapping intervals
-                res[-1] = [prev[0], max(prev[1], curr[1])]
+            if prev[1] >= intervals[i][0]:  # Overlapping intervals
+                res[-1] = [prev[0], max(prev[1], intervals[i][1])]
             else:
-                res.append(curr)
+                res.append(intervals[i])
         
         return res
