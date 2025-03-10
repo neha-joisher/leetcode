@@ -17,8 +17,8 @@ class Solution:
         while queue:
             level,root=queue.popleft()
             hashmap_level[level].append(root.val)
-            if level < min_col: min_col=level
-            if level > max_col: max_col=level
+            min_col = min(min_col, level)
+            max_col = max(max_col, level)
             if root.left: queue.append([level-1,root.left])
             if root.right: queue.append([level+1,root.right])
 
