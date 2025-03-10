@@ -39,7 +39,7 @@ class Solution:
 
         # Compute steps for each number in the range
         res = [(collatz_steps(i), i) for i in range(lo, hi + 1)]
-            
+        
         res.sort()  # Sort based on (steps, number)
             
         return res[k - 1][1]  # Get k-th smallest number
