@@ -11,6 +11,7 @@ class Solution:
             i += 1
 
         num = 0
+
         while i < len(s) and s[i].isdigit():  # Step 3: Process digits
             num = num * 10 + int(s[i])
             i += 1
