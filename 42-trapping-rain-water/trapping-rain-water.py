@@ -6,14 +6,20 @@ class Solution:
         right_max=[0]*n
 
         for i in range(n):
+            j=-i-1
             left_max[i]=left_wall
-            if height[i]>left_wall:
-                left_wall=height[i]
+            right_max[j]=right_wall
+            left_wall=max(height[i],left_wall)
+            right_wall=max(height[j],right_wall)
+        # for i in range(n):
+        #     left_max[i]=left_wall
+        #     if height[i]>left_wall:
+        #         left_wall=height[i]
 
-        for i in range(n-1, -1, -1):
-            right_max[i]=right_wall
-            if height[i]>right_wall:
-                right_wall=height[i]
+        # for i in range(n-1, -1, -1):
+        #     right_max[i]=right_wall
+        #     if height[i]>right_wall:
+        #         right_wall=height[i]
 
         res=0
         for i in range(n):
