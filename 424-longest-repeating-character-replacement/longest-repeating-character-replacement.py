@@ -17,7 +17,6 @@ class Solution:
                 hashmap[s[j]]=1
 
             max_freq=get_max_freq()
-            print(max_freq,type(max_freq))
             if ((j-i)+1)-max_freq<=k:
                 max_len=max(max_len,((j-i)+1))
                 j+=1
