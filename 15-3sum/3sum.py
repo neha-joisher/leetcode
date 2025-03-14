@@ -3,6 +3,17 @@ class Solution:
         res = []
         nums.sort()
 
+        # num_set=set(nums)
+        # l,r=0,len(nums)-1
+        # while(l<r):
+        #     add=(nums[l]+nums[r])
+        #     if -add in num_set:
+        #         res.append([nums[l],nums[r],-add])
+        #     l+=1
+        #     r-=1
+        # print(res)
+        # return res
+
         for i, a in enumerate(nums):
             if a > 0:
                 break
@@ -23,6 +34,8 @@ class Solution:
                     r -= 1
                     while nums[l] == nums[l - 1] and l < r:
                         l += 1
+                    while nums[r] == nums[r+ 1] and l < r:
+                        r -= 1
                         
         return res
             
