@@ -8,8 +8,7 @@ class Solution:
             
             for w in wordDict:
                 if ((i + len(w)) <= len(s) and 
-                     s[i : i + len(w)] == w
-                ):
+                     s[i : i + len(w)] == w):
                     if dfs(i + len(w)):
                         memo[i] = True
                         return True
