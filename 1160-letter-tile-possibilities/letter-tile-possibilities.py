@@ -1,11 +1,21 @@
 class Solution:
     def numTilePossibilities(self, tiles: str) -> int:
-        unique_sequences = set()
 
-        # Generate all permutations of all possible lengths
-        for length in range(1, len(tiles) + 1):
-            for perm in permutations(tiles, length):
-                unique_sequences.add(perm)
+        counter = Counter(tiles)
+        result = 0
         
-        return len(unique_sequences)
-
+        def backtrack():
+            nonlocal result
+            # Iterate over each letter that is still available
+            for tile in counter:
+                if counter[tile] > 0:
+                    # Use this tile: it forms a new sequence (of current length + 1)
+                    result += 1
+                    counter[tile] -= 1
+                    # Continue building the sequence with the remaining tiles
+                    backtrack()
+                    # Backtrack: restore the count
+                    counter[tile] += 1
+        
+        backtrack()
+        return result
