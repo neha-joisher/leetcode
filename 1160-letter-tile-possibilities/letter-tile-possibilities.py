@@ -1,21 +1,15 @@
 class Solution:
     def numTilePossibilities(self, tiles: str) -> int:
-
-        counter = Counter(tiles)
-        result = 0
+        count = Counter(tiles)
+    
+        def dfs():
+            total = 0
+            for tile in count:
+                if count[tile] > 0:
+                    total += 1       # count this new sequence
+                    count[tile] -= 1
+                    total += dfs()   # count sequences that extend this one
+                    count[tile] += 1
+            return total
         
-        def backtrack():
-            nonlocal result
-            # Iterate over each letter that is still available
-            for tile in counter:
-                if counter[tile] > 0:
-                    # Use this tile: it forms a new sequence (of current length + 1)
-                    result += 1
-                    counter[tile] -= 1
-                    # Continue building the sequence with the remaining tiles
-                    backtrack()
-                    # Backtrack: restore the count
-                    counter[tile] += 1
-        
-        backtrack()
-        return result
+        return dfs()
