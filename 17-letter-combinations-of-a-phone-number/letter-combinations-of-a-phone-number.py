@@ -13,7 +13,7 @@ class Solution:
         sol=[]
 
         # Backtracking function to build combinations
-        def backtrack(index, sol):
+        def backtrack(index):
             # If the current combination is complete, add it to the result
             if index == len(digits):
                 result.append("".join(sol))
@@ -22,9 +22,9 @@ class Solution:
             # Iterate over the possible letters for the current digit
             for letter in phone_map[digits[index]]:
                 sol.append(letter)        # Choose
-                backtrack(index + 1, sol) # Explore
+                backtrack(index + 1) # Explore
                 sol.pop()                # Un-choose (backtrack)
 
-        backtrack(0, sol)
+        backtrack(0)
         return result
         
