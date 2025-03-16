@@ -1,12 +1,14 @@
 class Solution:
     def findPeakElement(self, nums: List[int]) -> int:
-        start,end=0,len(nums)-1
-        while(start<end):
-            mid=(start+end)//2
-            if nums[mid]>nums[mid+1]:
-                end=mid
-            elif  nums[mid]<nums[mid+1]:
-                start=mid+1
-        return start
+        left, right = 0, len(nums) - 1
+
+        while left < right:
+            mid = (left + right) // 2
+            if nums[mid] > nums[mid + 1]:  # Peak is in the left half (including mid)
+                right = mid
+            else:  # Peak is in the right half
+                left = mid + 1
+
+        return left  # or right, since both will be equal at the peak
 
         
