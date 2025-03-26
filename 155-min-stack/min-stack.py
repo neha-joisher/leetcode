@@ -1,8 +1,7 @@
 class MinStack:
-    
+
     def __init__(self):
         self.stack=[]
-        # self.minElement=float('inf')
         self.minStack=[]
         
 
