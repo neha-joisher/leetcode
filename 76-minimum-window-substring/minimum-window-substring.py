@@ -21,7 +21,7 @@ class Solution(object):
                 if freq_Counter_s[s[e]]==freq_Counter_t[s[e]]:
                     have+=1
             while have==need:#window is valid
-                if min(min_length,e-st+1)==e-st+1:
+                if e-st+1<min_length:
                     min_length=e-st+1
                     min_substring=s[st:e+1]
                 if s[st] in freq_Counter_t:
