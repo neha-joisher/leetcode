@@ -1,33 +1,21 @@
-class Solution:
-    def trap(self, height: List[int]) -> int:
-        left_wall=right_wall=0
-        n=len(height)
-        left_max=[0]*n
-        right_max=[0]*n
-
-        for i in range(n):
-            j=-i-1
-            left_max[i]=left_wall
-            right_max[j]=right_wall
-            left_wall=max(height[i],left_wall)
-            right_wall=max(height[j],right_wall)
-        # for i in range(n):
-        #     left_max[i]=left_wall
-        #     if height[i]>left_wall:
-        #         left_wall=height[i]
-
-        # for i in range(n-1, -1, -1):
-        #     right_max[i]=right_wall
-        #     if height[i]>right_wall:
-        #         right_wall=height[i]
-
-        res=0
-        for i in range(n):
-           pot_water=min(left_max[i],right_max[i])
-           res=res+max(0,pot_water-height[i])
-        return res
-
-
-
-
+class Solution(object):
+    def trap(self, height):
+        """
+        :type height: List[int]
+        :rtype: int
+        """
         
+        left_height=[0]*len(height)
+        right_height=[0]*len(height)
+        left_Max=0
+        right_Max=0
+        for i in range(1,len(height)):
+            left_height[i]=max(left_Max,height[i-1])
+            left_Max=left_height[i]
+        for i in range(len(height)-2,-1,-1):
+            right_height[i]=max(right_Max,height[i+1])
+            right_Max=right_height[i]
+        max_water=0
+        for i in range(len(height)):
+            max_water+=max(0,min(left_height[i],right_height[i])-height[i])
+        return max_water
