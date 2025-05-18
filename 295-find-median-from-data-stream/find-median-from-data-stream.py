@@ -8,8 +8,7 @@ class MedianFinder:
         
             heapq.heappush(self.small, -1* num)
         
-        #1. Every element in Small is <= 
-        #   Every element in Large
+        #1. Every element in Small is <= Every element in Large
 
             if self.large and (-1* self.small[0])>self.large[0]:
                 val=heapq.heappop(self.small)
