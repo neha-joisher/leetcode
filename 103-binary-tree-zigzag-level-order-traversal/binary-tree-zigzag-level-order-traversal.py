@@ -13,6 +13,7 @@ class Solution:
         result = []  # Final result list to hold each level's node values
         queue = deque([root])  # Queue for BFS traversal starting with root node
         left_to_right = True   # Flag to control zigzag direction
+        
 
         # Perform level-order traversal (BFS)
         while queue:
